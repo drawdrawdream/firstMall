@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chapter 8</title>
+        <style>
+            /* 초기화2 */
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: 'Dotum';
+                font-size: 12px;
+            }
+            a {
+                text-decoration: none;
+            }
+            img {
+                border: 0;
+            }
+            ul {
+                list-style: none;
+            }
+            body {
+            }
+            #wrap {
+                width: 100%;
+                min-width: 1020px;
+                overflow: hidden;
+            }
+            .widthNarrow {
+                width: 980px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            /* 헤더 */
+            #main_header > h1.logo {
+                position: absolute;
+                left: 15px;
+                top: 10px;
+            }
+            #main_header > div.login_menu {
+                position: absolute;
+                top: 10px;
+                right: 0px;
+            }
+            #main_header {
+                position: relative;
+                height: 75px;
+            }
+
+            /* 사이드 */
+            #global_aside {
+                position: absolute;
+                left: 990px;
+                top: 20px;
+                width: 90px;
+            }
+            #global_aside > a {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            /* 내비게이션 위 */
+            #gnb_top {
+                overflow: hidden;
+            }
+            #gnb_top > div.menu {
+                float: left;
+                width: 140px;
+                height: 50px;
+                background: url('Images/gnb_top.png');
+                cursor: pointer;
+            }
+            #gnb_top > div.item_1 {
+                background-position:-0 -0;
+            }
+            #gnb_top > div.item_2 {
+                background-position: -0 -50px;
+            }
+            #gnb_top > div.item_3 {
+                background-position: -0 -100px;
+            }
+            #gnb_top > div.item_4 {
+                background-position: 0px -150px;
+            }
+            #gnb_top > div.item_5 {
+                background-position: 0px -200px;
+            }
+            #gnb_top > div.item_6 {
+                background-position: 0px -250px;
+            }
+            #gnb_top > div.item_7 {
+                background-position: 0px -300px;
+            }
+
+            #gnb_top > div.item_1:hover,
+            #gnb_top > div.item_1.active {
+                background-position: 0px -350px;
+            }
+            #gnb_top > div.item_2:hover,
+            #gnb_top > div.item_2.active {
+                background-position: 0px -400px;
+            }
+            #gnb_top > div.item_3:hover,
+            #gnb_top > div.item_3.active {
+                background-position: 0px -450px;
+            }
+            #gnb_top > div.item_4:hover,
+            #gnb_top > div.item_4.active {
+                background-position: 0px -500px;
+            }
+            #gnb_top > div.item_5:hover,
+            #gnb_top > div.item_5.active {
+                background-position: 0px -550px;
+            }
+            #gnb_top > div.item_6:hover,
+            #gnb_top > div.item_6.active {
+                background-position: 0px -600px;
+            }
+            #gnb_top > div.item_7:hover,
+            #gnb_top > div.item_7.active {
+                background-position: 0px -650px;
+            }
+
+            /* 내비게이션 아래 */
+            #gnb_sub {
+                overflow: hidden;
+            }
+            #gnb_sub > div.menu {
+                width: 98px;
+                height: 80px;
+                float: left;
+                background: url('Images/gnb_sub.png');
+                cursor: pointer;
+            }
+            #gnb_sub > div.item_1 {
+                background-position: 0px 0px;
+            }
+            #gnb_sub > div.item_2 {
+                background-position: 0px -80px;
+            }
+            #gnb_sub > div.item_3 {
+                background-position: 0px -160px;
+            }
+            #gnb_sub > div.item_4 {
+                background-position: 0px -240px;
+            }
+            #gnb_sub > div.item_5 {
+                background-position: 0px -320px;
+            }
+            #gnb_sub > div.item_6 {
+                background-position: 0px -400px;
+            }
+            #gnb_sub > div.item_7 {
+                background-position: 0px -480px;
+            }
+            #gnb_sub > div.item_8 {
+                background-position: 0px -560px;
+            }
+            #gnb_sub > div.item_9 {
+                background-position: 0px -640px;
+            }
+            #gnb_sub > div.item_10 {
+                background-position: 0px -720px;
+            }
+
+            #gnb_sub > div.item_1:hover,
+            #gnb_sub > div.item_1.active {
+                background-position: 0px -800px;
+            }
+            #gnb_sub > div.item_2:hover,
+            #gnb_sub > div.item_2.active {
+                background-position: 0px -880px;
+            }
+            #gnb_sub > div.item_3:hover,
+            #gnb_sub > div.item_3.active {
+                background-position: 0px -960px;
+            }
+            #gnb_sub > div.item_4:hover,
+            #gnb_sub > div.item_4.active {
+                background-position: 0px -10400px;
+            }
+            #gnb_sub > div.item_5:hover,
+            #gnb_sub > div.item_5.active {
+                background-position: 0px -1120px;
+            }
+            #gnb_sub > div.item_6:hover,
+            #gnb_sub > div.item_6.active {
+                background-position: 0px -1200px;
+            }
+            #gnb_sub > div.item_7:hover,
+            #gnb_sub > div.item_7.active {
+                background-position: 0px -1280px;
+            }
+            #gnb_sub > div.item_8:hover,
+            #gnb_sub > div.item_8.active {
+                background-position: 0px -1360px;
+            }
+            #gnb_sub > div.item_9:hover,
+            #gnb_sub > div.item_9.active {
+                background-position: 0px -1440px;
+            }
+            #gnb_sub > div.item_10:hover,
+            #gnb_sub > div.item_10.active {
+                background-position: 0px -1520px;
+            }
+
+            /* 목록 */
+            #detail_list > ul {
+                float: left;
+                width: 192px;
+            }
+            #detail_list > ul > li {
+                height: 13px;
+                margin-top: 5px;
+                padding: 3px 5px;
+                color: #f3f3f3;
+
+                /* 말줄임 삼총사 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            #detail_list > ul > li.header {
+                padding-left: 15px;
+            }
+            #detail_list > ul > li.header > p {
+                font-weight: bold;
+                color: #48c5ff;
+            }
+            #detail_list {
+                overflow: hidden;
+                padding: 10px;
+                background: #38414D;
+                padding-bottom: 15px;
+            }
+            /* 본문 */
+            #content {
+                margin-top: 10px;
+            }
+            #product_section {
+                overflow: hidden;
+                margin-top: 10px;
+            }
+            #product_article {
+                float: left;
+                border: 1px solid #d6d6d6;
+                width: 100%;
+                padding: 14px;
+                box-sizing: border-box;
+            }
+            #product_aside {
+                float: right;
+                padding-top: 0;
+                width: 170px;
+            }
+            #product_article > img {
+                display: block;
+            }
+            /* 푸터 */
+            #main_footer {
+                text-align: center;
+                margin-top: 30px;
+            }
+            #main_footer > h1 {
+                font-size: 1.2rem;
+                color: dimgray;
+            }
+            .top-link {
+                color: #333;
+                padding: 5px;
+            }
+            .prodLg {
+            }
+            img.prodRotateImg {
+                position: relative;
+                left: 50%;
+                margin-left: -940px;
+            }
+            .prodRow {
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+            .prodItem {
+                border: 1px solid #d6d6d6;
+                float: left;
+                cursor: pointer;
+                position: relative;
+            }
+            .prodBuy {
+                background: url('Images/mainBtns.png');
+                width: 40px;
+                height: 40px;
+                text-indent: -99999px;
+                position: absolute;
+                top: 240px;
+                left: 20px;
+            }
+            .prodItem:hover {
+                border: 1px solid #0096e4;
+            }
+            .prodItem:hover > .prodBuy {
+                background-position: -40px 0;
+                width: 100px;
+            }
+            .prodAside {
+                cursor: pointer;
+            }
+
+            /* utility classes */
+            .m-l-10 {
+                margin-left: 10px;
+            }
+            .m-b-5 {
+                margin-bottom: 5px;
+            }
+            .m-t-5 {
+                margin-top: 5px;
+            }
+            .m-b-0 {
+                margin-bottom: 0px;
+            }
+            .hidden {
+                display: none;
+            }
+
+            /* footer */
+            .footer-layer1 {
+                height: 30px;
+                border-top: 2px solid #ddd;
+                padding-top: 20px;
+                border-bottom: 1px solid #ddd;
+                min-width: 1020px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            #main_footer {
+                line-height: 150%;
+                color: #555;
+            }
+            .footer-layer1 > a,
+            .footer-layer2 a {
+                color: #555;
+            }
+            .footer-layer1 > a {
+                padding: 0 5px;
+            }
+            .footer-layer1 > a::before {
+                border-left: 1px solid black;
+                content: '';
+                padding-left: 10px;
+            }
+            .footer-layer1 > a:first-child::before {
+                border-left: 0;
+            }
+            .footer-layer2 {
+                overflow: hidden;
+                text-align: left;
+                margin: 30px auto;
+                width: 1020px;
+            }
+            .footer-layer2 > h1,
+            .footer-layer2 > .footer-content > * {
+                float: left;
+            }
+            .footer-layer2 > h1 {
+                width: 150px;
+            }
+            .footer-layer2 > h1 a,
+            .sns-link a,
+            .certification-list {
+                background: url('Images/footer_asset.png') no-repeat;
+                text-indent: -9999px;
+                display: block;
+            }
+            .footer-layer2 > h1 a {
+                background-position: -19px -34px;
+                width: 117px;
+                height: 34px;
+                margin-left: 10px;
+                display: block;
+            }
+            .footer-layer2 > .footer-content > address {
+                font-style: normal;
+                width: 260px;
+            }
+            a.licensee {
+                text-decoration: underline;
+            }
+            .contact-info {
+                width: 340px;
+            }
+            .contact-info em {
+                font-size: 24px;
+                font-family: Tahoma;
+                font-weight: bold;
+                display: block;
+                margin: 9px 0 11px 0;
+                font-style: normal;
+            }
+            .contact-fax {
+                font-size: 11px;
+            }
+            .safe-service {
+                float: left;
+                width: 270px;
+                font-size: 11px;
+            }
+            .safe-service > span {
+                font-size: 11px;
+            }
+            .service-check {
+                font-size: 11px;
+                text-decoration: underline;
+            }
+            .footer-layer3 {
+                border-top: solid 1px #ddd;
+            }
+            .certification-list {
+                width: 968px;
+                height: 80px;
+                margin: 0 auto;
+                background-position: -44px -92px;
+                position: relative;
+            }
+            .footer-layer4 {
+                background: #333;
+                height: 80px;
+                min-width: 1020px;
+                text-align: left;
+            }
+            .footer-layer4 > .coupang-copyright {
+                width: 1020px;
+                margin: 0 auto;
+                position: relative;
+            }
+            .footer-layer4 > .coupang-copyright > p.info {
+                color: #888;
+                font-size: 11px;
+                line-height: 13px;
+            }
+            .footer-layer4 .sns-link {
+                position: absolute;
+                top: 23px;
+                right: 0;
+            }
+            .sns-link a {
+                width: 34px;
+                height: 34px;
+                margin-right: 8px;
+            }
+            .sns-link a.facebook {
+                background-position: -220px -30px;
+            }
+            .sns-link a.blog {
+                background-position: -346px -30px;
+            }
+            .sns-link a.instagram {
+                background-position: -389px -30px;
+            }
+            .sns-link li {
+                float: left;
+            }
+            /* product rotate */
+            .prodRotateSmall {
+                position: absolute;
+                top: 50px;
+                z-index: 1;
+                right: 70px;
+                box-shadow: 0px 4px 5px rgb(0 0 0 / 30%);
+            }
+            .prodRotateSmallLink {
+                display: block;
+            }
+            .prodRotateSmallImg {
+                vertical-align: top;
+            }
+            .prodRotateSmallItem {
+                position: relative;
+            }
+            .prodRotateSmallLink > .mask {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+            .prodRotateSmallLink > .mask:hover {
+                border: 2px solid #4285f4;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="widthNarrow">
+                <header id="main_header">
+                    <h1 class="logo">
+                        <a href="#" onclick="return false"><img src="Images/title.png" /></a>
+                    </h1>
+                    <div class="login_menu">
+                        <span><a href="#" onclick="return false" class="top-link">로그인</a></span>
+                        <span><a href="#" onclick="return false" class="top-link">회원가입</a></span>
+                        <span><a href="#" onclick="return false" class="top-link">고객센터</a></span>
+                    </div>
+                </header>
+                <nav id="gnb_top">
+                    <div class="menu item_1 active"></div>
+                    <div class="menu item_2"></div>
+                    <div class="menu item_3"></div>
+                    <div class="menu item_4"></div>
+                    <div class="menu item_5"></div>
+                    <div class="menu item_6"></div>
+                    <div class="menu item_7"></div>
+                </nav>
+                <nav id="gnb_sub">
+                    <div class="menu item_1"></div>
+                    <div class="menu item_2"></div>
+                    <div class="menu item_3"></div>
+                    <div class="menu item_4"></div>
+                    <div class="menu item_5"></div>
+                    <div class="menu item_6"></div>
+                    <div class="menu item_7"></div>
+                    <div class="menu item_8"></div>
+                    <div class="menu item_9 active"></div>
+                    <div class="menu item_10"></div>
+                </nav>
+                <div id="detail_list">
+                    <ul>
+                        <li class="header"><p>게임용 노트북</p></li>
+                        <li>아이온 게임용 노트북</li>
+                        <li>디아블로 게임용 노트북</li>
+                        <li>블소 게임용 노트북</li>
+                        <li class="header"><p>울트라북</p></li>
+                        <li>헬로키티 울트라북</li>
+                        <li>리락쿠마 울트라북 초특가</li>
+                        <li>카피바라 울트라북</li>
+                        <li>쵸파 울트라북</li>
+                        <li>고양이 울트라북</li>
+                    </ul>
+                    <ul>
+                        <li>둘리 울트라북</li>
+                        <li class="header"><p>노트북 가방</p></li>
+                        <li>솜사탕 브랜드 노트북 가방</li>
+                        <li>보노보노 가방</li>
+                        <li>랑콤 가방</li>
+                        <li class="header"><p>받침대/쿨러</p></li>
+                        <li>아이바네즈 받침대</li>
+                        <li>깁슨 쿨러</li>
+                        <li>헤라클레스 삼각 받침대</li>
+                        <li>펜더 스트라토캐스터 쿨러</li>
+                    </ul>
+                    <ul>
+                        <li class="header"><p>노트북 보호 용품</p></li>
+                        <li>Node.js 방열 보호판</li>
+                        <li>안드로이드</li>
+                        <li>초특가 자바스크립트 보호대</li>
+                        <li>기계 학습을 사용한 보호대  </li>
+                        <li class="header"><p>맥북</li>
+                        <li>원고를 작성하는 맥북 에어</li>
+                        <li>레티나 디스플레이</li>
+                        <li class="header"><p>노트북 보호 용품</p></li>
+                        <li>물건 이름 만들기 힘들어</li>
+                    </ul>
+                    <ul>
+                        <li>우주 방사능 보호 코팅제</li>
+                        <li>자체 중력 생성 장치</li>
+                        <li>초특가</li>
+                        <li>노트북 투명화 스프레이</li>
+                        <li>고압 전류</li>
+                        <li class="header"><p>노트북 보조 용품</p></li>
+                        <li>초특가</li>
+                        <li>공간 균열 장치</li>
+                        <li>프로그램 만드는 프로그램</li>
+                        <li>초특가</li>
+                    </ul>
+                    <ul>
+                        <li>미오 베이스 장치</li>
+                        <li>공간을 지배하는자</li>
+                        <li>현금 할인</li>
+                        <li class="header"><p>외장 하드 디스크</p></li>
+                        <li>토시바 500GB 외장 하드</li>
+                        <li>초공간 통합 무한 메모리</li>
+                        <li>모던 웹을 위한 Node.js 프로그래밍</li>
+                        <li>모던 웹을 위한 JavaScript + jQuery 입문</li>
+                        <li>윤인성</li>
+                        <li>이름 만들기 힘들어요</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- rotate small --->
+            <div class="widthNarrow">
+                <ul class="prodRotateSmall">
+                    <li class="prodRotateSmallItem">
+                        <a href="#" onclick="return false" class="prodRotateSmallLink">
+                            <img class="prodRotateSmallImg" src="Images/prodRotateSmall1.jpg" width="180" height="60" alt="">
+                            <span class="mask"></span>
+                        </a>
+                    </li>
+                    <li class="prodRotateSmallItem">
+                        <a href="#" onclick="return false" class="prodRotateSmallLink">
+                            <img class="prodRotateSmallImg" src="Images/prodRotateSmall2.jpg" width="180" height="60" alt="">
+                            <span class="mask"></span>
+                        </a>
+                    </li>
+                    <li class="prodRotateSmallItem">
+                        <a href="#" onclick="return false" class="prodRotateSmallLink">
+                            <img class="prodRotateSmallImg" src="Images/prodRotateSmall3.jpg" width="180" height="60" alt="">
+                            <span class="mask"></span>
+                        </a>
+                    </li>
+                    <li class="prodRotateSmallItem">
+                        <a href="#" onclick="return false" class="prodRotateSmallLink">
+                            <img class="prodRotateSmallImg" src="Images/prodRotateSmall4.jpg" width="180" height="60" alt="">
+                            <span class="mask"></span>
+                        </a>
+                    </li>
+                    <li class="prodRotateSmallItem">
+                        <a href="#" onclick="return false" class="prodRotateSmallLink">
+                            <img class="prodRotateSmallImg" src="Images/prodRotateSmall5.jpg" width="180" height="60" alt="">
+                            <span class="mask"></span>
+                        </a>
+                    </li>
+                    <li class="prodRotateSmallItem">
+                        <a href="#" onclick="return false" class="prodRotateSmallLink">
+                            <img class="prodRotateSmallImg" src="Images/prodRotateSmall6.jpg" width="180" height="60" alt="">
+                            <span class="mask"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- rotate big --->
+            <figure id="product_image">
+                <img src="Images/prodRotate1.jpg" class="prodRotateImg" />
+                <img src="Images/prodRotate2.jpg" class="prodRotateImg hidden" />
+                <img src="Images/prodRotate3.jpg" class="prodRotateImg hidden" />
+                <img src="Images/prodRotate4.jpg" class="prodRotateImg hidden" />
+                <img src="Images/prodRotate5.jpg" class="prodRotateImg hidden" />
+                <img src="Images/prodRotate6.jpg" class="prodRotateImg hidden" />
+            </figure>
+
+            <!-- content -->
+            <div class="widthNarrow">
+                <div id="content">
+                    <section id="product_section">
+                        <article id="product_article">
+                            <div class="prodRow">
+                                <div class="prodItem">
+                                    <img class="prodItemImg" src="Images/prod1-1.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                                <div class="prodItem m-l-10">
+                                    <img class="prodItemImg" src="Images/prod1-2.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                            </div>
+                            <div class="prodRow">
+                                <div class="prodItem">
+                                    <img class="prodImage" src="Images/prod2-1.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                                <div class="prodItem m-l-10">
+                                    <img class="prodImage" src="Images/prod2-2.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                                <div class="prodItem m-l-10">
+                                    <img class="prodImage" src="Images/prod2-3.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                                <div class="prodItem m-l-10">
+                                    <img class="prodImage" src="Images/prod2-4.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                            </div>
+                            <div class="prodRow m-b-0">
+                                <div class="prodItem">
+                                    <img class="prodImage" src="Images/prod3-1.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                                <div class="prodItem m-l-10">
+                                    <img class="prodImage" src="Images/prod3-2.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                                <div class="prodItem m-l-10">
+                                    <img class="prodImage" src="Images/prod3-3.jpg" />
+                                    <div class="prodBuy">구매하기</div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+                <aside id="global_aside">
+                    <a><img class="prodAside" src="Images/prodAside1.png" /></a>
+                    <a><img class="prodAside" src="Images/prodAside2.png" /></a>
+                    <a><img class="prodAside" src="Images/prodAside3.png" /></a>
+                    <a><img class="prodAside" src="Images/prodAside1.png" /></a>
+                    <a><img class="prodAside" src="Images/prodAside2.png" /></a>
+                </aside>
+            </div>
+            <footer id="main_footer">
+                <div class="footer-layer1">
+                    <a href="#" onclick="return false">회사소개</a>
+                    <a href="#" onclick="return false">인재채용</a>
+                    <a href="#" onclick="return false">입점 / 제휴문의</a>
+                    <a href="#" onclick="return false">공지사항</a>
+                    <a href="#" onclick="return false">고객의 소리</a>
+                    <a href="#" onclick="return false">이용약관</a>
+                    <a href="#" onclick="return false"><b>개인정보 처리방침</b></a>
+                    <a href="#" onclick="return false">쿠팡페이 이용약관</a>
+                    <a href="#" onclick="return false"><b>쿠팡페이 개인정보처리방침</b></a>
+                    <a href="#" onclick="return false">신뢰관리센터</a>
+                    <a href="#" onclick="return false">제휴마케팅</a>
+                    <a href="#" onclick="return false">광고안내</a>
+                </div>
+                <div class="footer-layer2">
+                    <h1><a href="/" title="COUPANG">COUPANG</a></h1>
+                    <div class="footer-content">
+                        <address>
+                            상호명 및 호스팅 서비스 제공 : 쿠팡(주)<br>
+                            대표이사 : 강한승,박대준<br>
+                            서울시 송파구 송파대로 570 <br>
+                            사업자 등록번호 : 120-88-00767 <br>
+                            통신판매업신고 : 2017-서울송파-0680<br>
+                            <a href="#" onclick="return false" class="licensee" title="사업자정  보 확인">사업자정보 확인 &gt;</a>
+                        </address>
+                        <div class="contact-info">
+                            <a href="#" onclick="return false" class="call-center" title="365 고객센터">
+                                <strong>365고객센터</strong> | 전자금융거래분쟁처리담당<br>
+                                <em>1577-7011</em>
+                                서울시 송파구 송파대로 570<br>
+                                <span class="contact-fax">email : help@coupang.com</span>
+                            </a>
+                        </div>
+                        <p class="safe-service">
+                            <strong>우리은행 채무지급보증 안내</strong><br>
+                            <span>
+                                당사는 고객님이 현금 결제한 금액에 대해<br>우리은행과 채무지급보증 계약을 체결하여<br>안전거래를 보장하고 있습니다.<br>
+                            </span>
+                            <a href="javascript:;" id="serviceCheck" class="service-check" title="서비스 가입사실 확인">서비스 가입사실 확인 &gt;</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-layer3">
+                    <div class="certification-list">
+                    </div>
+                </div>
+                <div class="footer-layer4">
+                    <div class="coupang-copyright">
+                        <p class="info" style="padding-top:9px">사이버몰 내 판매되는 상품 중에는 쿠팡에 등록한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.   <br> 마켓플레이스(오픈마켓) 상품의 경우 쿠팡은 통신판매중개자이며 통신판매의 당사자가 아닙니다. <br>쿠팡은 마켓플레이스(오픈마켓) 상품, 거래정보 및 거래 등에   대하여 책임을 지지 않습니다. <br> 쿠팡은 소비자 보호와 안전거래를 위해 신뢰관리센터(CM112@coupang.com)를 운영하고 있으며, 관련 분쟁이 발생할 경우 별도의 분쟁  처리절차에 의거 분쟁이 처리됩니다.<br> Copyright © Coupang Corp. 2010-2021 All Rights Reserved.
+                        </p>
+                        <ul class="sns-link">
+                            <li><a href="#" onclick="return false" class="facebook" title="쿠팡 페이스북">쿠팡 페이스북</a></li>
+                            <li><a href="#" onclick="return false" class="blog" title="쿠팡 뉴스룸">쿠팡 뉴스룸</a></li>
+                            <li><a href="#" onclick="return false" class="instagram" title="쿠팡 인스타그램">쿠팡 인스타그램</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
